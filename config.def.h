@@ -17,8 +17,8 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
 };
 
-/* tagging                   Arch Discord Firefox Remote Steam VSC*/
-static const char *tags[] = { "󰣇", "󰙯",     "",    "󰢹", "󰓓",  "󰨞" };
+/* tagging                   Arch Discord Firefox Remote Steam  VSC  OBS*/
+static const char *tags[] = { "󰣇",  "󰙯",     "",  "󰢹",   "󰓓",  "󰨞", "󱜠" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -31,6 +31,7 @@ static const Rule rules[] = {
 	{ "Nxplayer.bin",      NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "steam",  		   NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Code",  			   NULL,       NULL,       1 << 5,       0,           -1 },
+	{ "obs",  			   NULL,       NULL,       1 << 6,       0,           -1 },
 };
 
 /* layout(s) */
@@ -60,6 +61,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[]   = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]    = { "st", NULL };
+static const char *screenshot[] = { "flameshot", "gui", NULL};
 
 /* apps */
 static const char *discord[]    = { "discord", NULL };
@@ -67,6 +69,7 @@ static const char *firefox[]    = { "firefox", NULL };
 static const char *nomachine[]  = { "nomachine-client", NULL };
 static const char *steam[]      = { "steam", NULL };
 static const char *code[]       = { "code", NULL };
+static const char *obs[]        = { "obs", NULL };
 
 /* tagfun */
 static struct {
@@ -78,6 +81,7 @@ static struct {
 	[3] = { spawn, { .v = nomachine } },
 	[4] = { spawn, { .v = steam } },
 	[5] = { spawn, { .v = code } },
+	[6] = { spawn, { .v = obs } },
 };
 
 static Key keys[] = {
@@ -118,6 +122,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_underscore,                7)
 	TAGKEYS(                        XK_ccedilla,                  8)
 	{ MODKEY|ShiftMask,		        XK_q,         quit,          {0} },
+	{ 0,                            XK_Print,     spawn,          {.v = screenshot } },
 };
 
 /* button definitions */
