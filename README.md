@@ -1,6 +1,8 @@
 # Souna's Arch Tools 🐧🛠️
 Welcome ! Here's one of the tools I use on my Arch installation, and it's obviously subject to evolution and improvement.
+
 The main goal of this kind of repo is to keep "backups" in case I break anything.
+
 Also it'll be very useful for my **future custom arch install interactive script** 🔥.
 
 ### Oh ? Interested by using it ? Nothing special but.. Why not.
@@ -40,4 +42,4 @@ done
 ```
 Then add it to your startup file instead of `dwm &`
 
-Also the keybinds are setup for the AZERTY layout, you check the diff file [here](https://dwm.suckless.org/patches/azerty/dwm-azerty-6.2.diff).
+Also the keybinds are setup for the AZERTY layout, you can check the diff file [here](https://dwm.suckless.org/patches/azerty/dwm-azerty-6.2.diff).
