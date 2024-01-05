@@ -5,16 +5,19 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrainsMono Nerd Font Mono:style:medium:size=11", "SymbolsNerdFont:size=14:antialias=true:autohint=true", "NotoColorEmoji:size=11:antialias=true:autohint=true" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font Mono:style:medium:size=11";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
-static const char *colors[][3]      = {
+
+//idk what's these but why not
+static const char foreground_something[]  = "#bbbbbb";
+static const char foreground_something2[] = "#eeeeee";
+
+/* As a colorblind person, it's a funny part, trust me 💀 */
+static const char border[]                = "#222222";
+static const char background_color[] 	  = "#7a0076";
+static const char light_blue[]       	  = "#61a6db";
+static const char *colors[][3]       	  = {
 	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-	[SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+	[SchemeNorm] = { foreground_something,  background_color, border },
+	[SchemeSel]  = { foreground_something2, light_blue,       border  },
 };
 
 /* tagging                   Arch Discord Firefox Remote Steam  VSC  OBS*/
@@ -59,7 +62,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *dmenucmd[]   = { "dmenu_run", "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[]   = { "dmenu_run", NULL };
 static const char *termcmd[]    = { "st", NULL };
 static const char *screenshot[] = { "flameshot", "gui", NULL};
 
