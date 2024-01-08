@@ -28,7 +28,7 @@ rm config.h
 make
 ```
 
-Use (<kbd>super+shift+q</kbd>) to restart dwm.
+Use (<kbd>SUPER+SHIFT+Q</kbd>) to restart dwm.
 
 # ⚠️
 You should create a script available in your PATH to prevent your X session for being killed when you use the restart shortcut
