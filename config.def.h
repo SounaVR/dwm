@@ -21,7 +21,7 @@ static const char *colors[][3]       	  = {
 };
 
 /* tagging                   Arch Discord Firefox Remote Steam  VSC  OBS*/
-static const char *tags[] = { "󰣇",  "󰙯",     "",  "󰢹",   "󰓓",  "󰨞", "󱜠" };
+static const char *tags[] = { "󰣇",  "󰙯",     "󰖟",  "󰢹",   "󰓓",  "󰨞", "󱜠" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -31,6 +31,7 @@ static const Rule rules[] = {
 	/* class               instance    title       tags mask     isfloating   monitor */
 	{ "discord",  		   NULL,	   NULL,	   1 << 1,       0,           -1 },
 	{ "firefox",  		   NULL,       NULL,       1 << 2,       0,           -1 },
+	{ "Surf",  		       NULL,       NULL,       1 << 2,       0,           -1 },
 	{ "Nxplayer.bin",      NULL,       NULL,       1 << 3,       0,           -1 },
 	{ "steam",  		   NULL,       NULL,       1 << 4,       0,           -1 },
 	{ "Code",  			   NULL,       NULL,       1 << 5,       0,           -1 },
@@ -68,7 +69,7 @@ static const char *screenshot[] = { "flameshot", "gui", NULL};
 
 /* apps */
 static const char *discord[]    = { "discord", NULL };
-static const char *firefox[]    = { "firefox", NULL };
+static const char *surf[]       = { "surf", NULL };
 static const char *nomachine[]  = { "nomachine-client", NULL };
 static const char *steam[]      = { "steam", NULL };
 static const char *code[]       = { "code", NULL };
@@ -80,7 +81,7 @@ static struct {
 	const Arg arg;
 } tagfun_cmds[LENGTH(tags)] = {
 	[1] = { spawn, { .v = discord } },
-	[2] = { spawn, { .v = firefox } },
+	[2] = { spawn, { .v = surf } },
 	[3] = { spawn, { .v = nomachine } },
 	[4] = { spawn, { .v = steam } },
 	[5] = { spawn, { .v = code } },
